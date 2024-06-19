@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Mineração de Criptomoedas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Logo" id="logo">
+        <div id="usernameDisplay"></div>
+    </header>
+    <main>
+        <section id="login">
+            <h1>Login</h1>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+        <section id="blockchainSelection" style="display: none;">
+            <h2>Selecione a Blockchain</h2>
+            <select id="blockchain">
+                <option value="bitcoin">Bitcoin</option>
+                <option value="ethereum">Ethereum</option>
+                <option value="litecoin">Litecoin</option>
+            </select>
+            <button onclick="startMining()">Iniciar Mineração</button>
+        </section>
+        <section id="mining" style="display: none;">
+            <h2>Mineração</h2>
+            <div>
+                <p>Saldo em Criptomoeda: <span id="balanceCrypto">0.00000000</span></p>
+                <p>Saldo em BRL: <span id="balanceBRL">R$ 0.00</span></p>
+                <p>Saldo em USD: <span id="balanceUSD">$ 0.00</span></p>
+            </div>
+            <div id="miningOutput" style="height: 200px; overflow-y: scroll; padding: 10px; background-color: black; color: #32CD32;"></div>
+            <button id="withdraw">Sacar</button>
+            <button id="support">Suporte</button>
+            <button id="boost">Adquirir Processamento (Acelerar Scan)</button>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
